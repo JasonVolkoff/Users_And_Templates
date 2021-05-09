@@ -6,10 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">All the Users</h1>
+        <table class="table table-bordered table-striped mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>test1</td>
+                    <td>test2</td>
+                    <td>test3</td>
+                </tr>
+            </tbody>
+        </table>
 
+        <hr />
+        <h1 class="text-center mt-5 mb-4 ">Add a User</h1>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="firstName">First Name</label>
+                    <label for="email">Email</label>
+                    <label for="lastName">Last Name</label>
+
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" id="firstName" placeholder="Jane">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="text" class="form-control" placeholder="Doe">
+                </div>
+            </div>
+        </form>
+
+
+    </div>
 </body>
 
 </html>

@@ -2,6 +2,6 @@
 from django.urls import path, include
 from . import views
 urlpatterns = [
-
-    path('', include('app_one.urls'))
+    path('', views.index),
+    path('add_user', views.add_user)
 ]
