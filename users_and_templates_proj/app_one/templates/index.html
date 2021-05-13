@@ -25,35 +25,42 @@
                 </tr>
             </thead>
             <tbody>
+                {% for user in all_users %}
                 <tr>
-                    <td>1</td>
-                    <td>test1</td>
-                    <td>test2</td>
-                    <td>test3</td>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name}} {{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.age }}</td>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
 
         <hr />
         <h1 class="text-center mt-5 mb-4 ">Add a User</h1>
-        <form>
-            <div class="row">
+        <form action="/add_user" method="POST">
+            {% csrf_token %}
+            <div class="row mb-4">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="First name">
+                    <input type="text" name="first_name" class="form-control" placeholder="First name">
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Last name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="email" class="form-control" placeholder="email@domain.com">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Age">
+                    <input type="text" name="last_name" class="form-control" placeholder="Last name">
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">Add</button>
+            <div class="row mb-4">
+                <div class="col">
+                    <input type="email" name="email" class="form-control" placeholder="email@domain.com">
+                </div>
+                <div class="col">
+                    <input type="text" name="age" class="form-control" placeholder="Age">
+                </div>
+            </div>
+
+            <div class="col text-center">
+                <button class="btn btn-lg btn-primary">Add</button>
+            </div>
+
         </form>
 
 
